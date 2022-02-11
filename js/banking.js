@@ -1,52 +1,51 @@
+
+
+
+function getInputValue(){
+    const depositInput = document.getElementById('deposit-input');
+    const newDeposit = parseFloat(depositInput.value);
+     // clear input
+    depositInput.value = '';
+    return newDeposit;
+}
+
+
+
+
 document.getElementById('deposit-button').addEventListener('click', function(){
 
     //deposit section
-    const depositInput = document.getElementById('deposit-input');
-    const newDepositValue = depositInput.value;
-    const newDeposit = parseFloat(newDepositValue);
+    // const depositInput = document.getElementById('deposit-input');
+    // const newDeposit = parseFloat(depositInput.value);
     
     const depositTotal = document.getElementById('deposit-total');
-    const depositTotalText = depositTotal.innerText;
-    const previousDeposit = parseFloat(depositTotalText);
-
-    const totalDepositAmount = previousDeposit + newDeposit;
+    const previousDeposit = parseFloat(depositTotal.innerText);
+    depositTotal.innerText = previousDeposit + newDeposit;
     
-    depositTotal.innerText = totalDepositAmount;
-
     //balance section
     const balanceTotal = document.getElementById('balance-total');
-    const balanceText = balanceTotal.innerText;
-    const previousBalance = parseFloat(balanceText);
-
-    const totalBalanceAmount = previousBalance + newDeposit;
-    balanceTotal.innerText = totalBalanceAmount;
+    const previousBalance = parseFloat(balanceTotal.innerText);
+    balanceTotal.innerText = previousBalance + newDeposit;
 
     // clear input
-    depositInput.value = '';
+    // depositInput.value = '';
 })
 
 document.getElementById('withdraw-button').addEventListener('click', function(){
 
     // withdraw Section
     const withdrawInput = document.getElementById('withdraw-input');
-    const withdrawValue = withdrawInput.value;
-    const newWithdraw = parseFloat(withdrawValue);
+    const newWithdraw = parseFloat(withdrawInput.value);
 
     const withdrawTotal = document.getElementById('withdraw-total');
-    const withdrawText = withdrawTotal.innerText;
-    const previousWithdraw = parseFloat(withdrawText);
-
-    const totalWithdrawAmout = previousWithdraw + newWithdraw;
-    withdrawTotal.innerText = totalWithdrawAmout;
+    const previousWithdraw = parseFloat(withdrawTotal.innerText);
+    withdrawTotal.innerText = previousWithdraw + newWithdraw;
 
     // Rest of Balance
 
     const balanceTotal = document.getElementById('balance-total');
-    const balanceText = balanceTotal.innerText;
-    const previousBalance = parseFloat(balanceText);
-
-    const restOfBalance = previousBalance - newWithdraw;
-    balanceTotal.innerText = restOfBalance;
+    const previousBalance = parseFloat(balanceTotal.innerText);
+    balanceTotal.innerText = previousBalance - newWithdraw;
     
     //clear input
     withdrawInput.value = '';
