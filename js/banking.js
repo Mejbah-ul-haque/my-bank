@@ -21,6 +21,7 @@ document.getElementById('deposit-button').addEventListener('click', function(){
     const totalBalanceAmount = previousBalance + newDeposit;
     balanceTotal.innerText = totalBalanceAmount;
 
+    // clear input
     depositInput.value = '';
 })
 
@@ -47,6 +48,6 @@ document.getElementById('withdraw-button').addEventListener('click', function(){
     const restOfBalance = previousBalance - newWithdraw;
     balanceTotal.innerText = restOfBalance;
     
-
+    //clear input
     withdrawInput.value = '';
 })
